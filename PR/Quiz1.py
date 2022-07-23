@@ -25,3 +25,24 @@ for i in range(4):
 print("Quiz 2 :")
 print("온라인 스터디 모임 날짜는 매월 "+str(studyday[0])+", "+str(studyday[1])+", "+str(studyday[2])+" 일 입니다")
 print("오프라인 스터디 모임 날짜는 매월 "+str(studyday[3])+" 일 입니다")
+
+# Quiz)사이트 별로 비밀번호를 설정하시오
+# 1_ http:// 제외
+# 2_ 닷컴(.com)  제외
+# 3_ 1과 2를 만족하는 첫 세 글자 + 총 글자 개수 + 글자 내 "e"의 개수 + "!"로 구성
+# 예) naver의 경우 생성된 비밀번호 : nav51!
+print("Quiz 3 :")
+print("사용하실 도메인을 입력해주십시오 :")
+userinput=input()
+userinput=str(userinput)
+userdomain=userinput.strip("http://") 
+#또는 userinput.replace("http://","")
+userdomain=userdomain.strip(".com") 
+#또는 userdomain=userdomain[:userdomain.index(".")]
+fstpassword=userdomain[0:3]
+countlist=len(userdomain)
+count_e=userdomain.count("e")
+print(f"유저님의 비밀번호는 \"{fstpassword}{countlist}{count_e}!\" 입니다")
+#또는
+#password=fstpassword+str(len(userdomain))+str(userdomain.count("e"))+"!"
+#print("{0}의 비밀번호는 {1}입니다.".format(userinput, password))
